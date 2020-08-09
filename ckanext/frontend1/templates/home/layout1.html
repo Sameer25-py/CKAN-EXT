@@ -1,0 +1,12 @@
+{% ckan_extends %}
+
+{# optional way to show stats #}
+
+{% block featured_group %}
+        {% set total = 0 %}
+        {% for row in c.raw_packages_by_week %}
+                { total+=row.total_packages }
+        {% endfor %}
+        {{"Total Datasets:", total}}
+{% endblock %}
+
